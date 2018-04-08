@@ -1,0 +1,84 @@
+.login-form {
+    max-width: 300px;
+  }
+  
+  .login-form-forgot {
+    float: right;
+  }
+  
+  .login-form-button {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+  }
+  .ant-row{
+    width: 100%;
+    height: 100%;
+    .main{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: url('./../../assets/imgs/login.jpg') no-repeat center center;
+      background-size: 100% 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .loginBox{
+        position: relative;
+        left: 25%;
+        width: 16.5%;
+        height: 400px;
+        padding: 20px 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 15px #aaa;
+        .title{
+          position: relative;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 65px;
+          text-align: center;
+          margin-bottom: 10px;
+          span{
+            position: relative;
+            display: block;
+            width: 65px;
+            height: 32px;
+            padding: 0 5px;
+            z-index: 4;
+            background: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 2px;
+          }
+          &::after{
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            height: 15px;
+            border-top: solid 1px #aaa;
+          }
+        }
+        .login-form{
+          width: 100%;
+          height: 100%;
+          .login-form-forgot{
+            font-size: 13px;
+          }
+          .error{
+            .ant-input{
+              border-color: #f04134;
+            }
+            border-color: #f04134;
+            color: #f04134;
+          }
+        }
+      }
+    }
+  }

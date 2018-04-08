@@ -1,0 +1,38 @@
+<div nz-row>
+  <div nz-col [nzSpan]="24" class="main">
+    <div class="loginBox">
+      <div class="title">
+        <span>登录</span>
+      </div>
+      <form nz-form [formGroup]="validateForm" class="login-form">
+        <div nz-form-item>
+          <div nz-form-control>
+            <nz-input formControlName="userName" [nzPlaceHolder]="'输入用户名'" [nzSize]="'large'" [(ngModel)]="username" [class.error]="userName_check">
+              <ng-template #prefix>
+                <i class="anticon anticon-user"></i>
+              </ng-template>
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item>
+          <div nz-form-control>
+            <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'输入登录密码'" [nzSize]="'large'" [(ngModel)] = "psd">
+              <ng-template #prefix>
+                <i class="anticon anticon-lock"></i>
+              </ng-template>
+            </nz-input>
+          </div>
+        </div>
+        <div nz-form-item>
+          <div nz-form-control>
+            <label nz-checkbox formControlName="remember">
+              <span>记住我</span>
+            </label>
+            <a class="login-form-forgot">忘记密码？</a>
+            <button nz-button class="login-form-button" [nzType]="'primary'" [nzSize]="'large'" (click)="login();false">登录</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
