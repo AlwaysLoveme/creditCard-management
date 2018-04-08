@@ -1,4 +1,4 @@
-<div nz-row>
+<div nz-row class="animated flipInX">
   <div nz-col [nzSpan]="24" class="main">
     <div class="loginBox">
       <div class="title">
@@ -7,7 +7,7 @@
       <form nz-form [formGroup]="validateForm" class="login-form">
         <div nz-form-item>
           <div nz-form-control>
-            <nz-input formControlName="userName" [nzPlaceHolder]="'输入用户名'" [nzSize]="'large'" [(ngModel)]="username" [class.error]="userName_check">
+            <nz-input formControlName="userName" [nzPlaceHolder]="'输入用户名'" [nzSize]="'large'" [(ngModel)]="username">
               <ng-template #prefix>
                 <i class="anticon anticon-user"></i>
               </ng-template>
@@ -16,7 +16,7 @@
         </div>
         <div nz-form-item>
           <div nz-form-control>
-            <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'输入登录密码'" [nzSize]="'large'" [(ngModel)] = "psd">
+            <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'输入登录密码'" [nzSize]="'large'" [(ngModel)] = "psd" required>
               <ng-template #prefix>
                 <i class="anticon anticon-lock"></i>
               </ng-template>

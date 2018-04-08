@@ -27,7 +27,7 @@
       .loginBox{
         position: relative;
         left: 25%;
-        width: 16.5%;
+        width: 305px;
         height: 400px;
         padding: 20px 20px;
         background: #fff;
@@ -81,4 +81,7 @@
         }
       }
     }
+  }
+  .bounceInRight{
+    animation-delay: 0s;
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, RouterState, RouterStateSnapshot } from '@angular/router';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzNotificationService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     public router: Router,
     public activatedRoute: ActivatedRoute,
-    private message: NzMessageService
+    private notification: NzNotificationService
   ) {}
   ngOnInit() {
     this.validateForm = this.fb.group({
@@ -26,13 +26,13 @@ export class LoginComponent implements OnInit {
     });
   }
   login() {
-    if (this.username === undefined && this.psd === undefined) {
-      this.message.create('error', '请输入账号');
+    if ((this.username === undefined && this.psd === undefined) || this.username === '') {
+      this.notification.create('error', '提示', '请输入账号', { nzDuration: 1500 });
     }
-    if (!this.username === undefined && this.psd === undefined) {
-      this.message.create('error', '请输入密码');
+    if (!(this.username === undefined) && this.psd === undefined) {
+      this.notification.create('error', '提示', '请输入密码', { nzDuration: 1500 });
     }
-    if ( !this.username === undefined && !this.psd === undefined) {
+    if ( !(this.username === undefined) && !(this.psd === undefined)) {
       this.router.navigateByUrl('/home?username=' + this.username + '&psd=' + this.psd);
     }
   }
